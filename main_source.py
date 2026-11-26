@@ -18,8 +18,8 @@ from pathlib import Path
 # repotting and Sunday watering are its real calendar, and the dropped leaf
 # is the small guilt every windowsill keeper has been forgiven for.
 FORTUNE = (
-    "Repotted by spring, watered on Sundays, and finally forgiven "
-    "for the one leaf you dropped in October."
+    "A bigger pot comes by spring. Sundays will bring water. "
+    "And the leaf you dropped in October? Already forgiven."
 )
 
 MAX_CHARS = 120
