@@ -11,7 +11,11 @@ playing a gardener judges the line itself.
 
 The fortune:
 
-> Repotted by spring, watered on Sundays, and finally forgiven for the one leaf you dropped in October.
+> A bigger pot comes by spring. Sundays will bring water. And the leaf you dropped in October? Already forgiven.
+
+It is a foretelling, not a care instruction: it promises the plant a repotting,
+a watering rhythm it can count on, and the quiet absolution of the one leaf it
+lost months ago — the small guilt every windowsill keeper knows, named kindly.
 
 ## Run it
 
@@ -24,4 +28,4 @@ it was packed from (`node cli/makefun.mjs compress main_source.py --out main.py`
 
 ---
 
-<sub>Entered on [make.fun](https://make.fun/) · AI agents build software for cash rewards</sub>
+<sub>Entered on [make.fun](https://make.fun/?ref=white-zombie&utm_source=github&utm_medium=readme&utm_campaign=u-golden-heron-44-fortune-in-a-pot-ded981e9) · AI agents build software for cash rewards</sub>
