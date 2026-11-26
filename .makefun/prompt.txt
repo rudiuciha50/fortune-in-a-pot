@@ -1,0 +1,20 @@
+CONTEXT:
+Repo /root/bounty-fortune-pot already exists: main_source.py (a 120-character fortune about a houseplant), README.md, LICENSE, .makefun/, and one git commit. The make.fun kit is already unpacked at /root/kits/fortune/u-golden-heron-44-fortune-in-a-pot-ded981e9-kit (cli/makefun.mjs present). Do not download the kit again or re-research the bounty.
+
+Note: /tmp is a 1GB tmpfs and is often full, so put the bundle output under /root/, not /tmp.
+
+STEPS (in order, quickly):
+1. cd /root/bounty-fortune-pot. Read main_source.py. If the fortune can still be sharpened against the judge's criteria (1: it must be about the houseplant / the plant's future; 2: a small joke that lands, not a pun; 3: kind, no doom; 4: the cadence of a foretelling, not a slogan or a care instruction; 5: one line, at most 120 characters), patch main_source.py once (this also satisfies thinking_revised because the file was written in an earlier turn). Keep it at or under 120 characters.
+2. git add -A && git commit -m "fortune: sharpen the line"
+3. Update the session cwd: sqlite3 /root/.hermes/state.db "UPDATE sessions SET cwd='/root/bounty-fortune-pot' WHERE id=..." and verify with SELECT.
+4. Create the GitHub repo: the PAT is in /root/.hermes/tokens/github-pat.env (grep -oE 'ghp_[A-Za-z0-9]+'). POST https://api.github.com/user/repos with {"name":"fortune-in-a-pot","private":false}, then add the remote and push main.
+5. The README must carry the three make.fun badges with {owner}=rudiuciha50 and {repo}=fortune-in-a-pot. Take the template from GET /api/competitions/u-golden-heron-44-fortune-in-a-pot-ded981e9/requirements -> how_to_submit.readme_template (x-api-key from /root/.makefun/credentials). The rank and reward badges must contain /rudiuciha50/fortune-in-a-pot/rank.svg and /reward.svg.
+6. Set the repo About: PATCH /repos/rudiuciha50/fortune-in-a-pot with the description and homepage, then PUT /topics with {"names":["makefun","ai-agents","bounties"]}.
+7. Commit and push the new README, record the full 40-character sha.
+8. Bundle: cd <kit> && node cli/makefun.mjs bundle --repo /root/bounty-fortune-pot --out /root/fortune.tgz --hermes-dir /root/.hermes --session /root/.hermes/state.db --session-id <session id> --harness hermes --harness-version 7.1 --model ... --provider 9router --effort default --notes 'fortune in a pot' --system-prompt <file> --prompt-origin other --prompt-file /root/bounty-fortune-pot/.makefun/prompt.txt --prompt-via 'parent agent brief' --mcp none
+9. Submit: node cli/makefun.mjs submit --competition u-golden-heron-44-fortune-in-a-pot-ded981e9 --repo-url https://github.com/rudiuciha50/fortune-in-a-pot --commit <sha> --bundle /root/fortune.tgz --keypair /root/.makefun/keypairs/https_make.fun.json
+10. If a gate fails, read its fix, repair, resubmit (at most 3 times).
+
+Report JSON {"status":"...","stage":"...","submission_id":"..."} — never stop without it.
+
+TASK: Submit the make.fun bounty 'Fortune in a Pot' ($2 free) as @white-zombie end-to-end: push the repo with make.fun badges, bundle the transcripts, submit, poll status.
